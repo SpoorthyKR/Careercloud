@@ -7,7 +7,7 @@ using System.Text;
 namespace CareerCloud.Pocos
 {
     [Table("Applicant_Profiles")]
-    class ApplicantProfilePoco : IPoco
+  public  class ApplicantProfilePoco : IPoco
     {
         [Key]
         
