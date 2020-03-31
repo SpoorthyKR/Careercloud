@@ -14,7 +14,14 @@ namespace CareerCloud.Pocos
         public Guid Login { get; set; }
         public Guid Role { get; set; }
         [Column("Time_Stamp")]
+        [NotMapped]
         public Byte[] TimeStamp { get; set; }
+
+
+        [ForeignKey("Login")]
+        public virtual SecurityLoginPoco SecurityLogins { get; set; }
+        [ForeignKey("Role")]
+        public virtual SecurityRolePoco SecurityRoles { get; set; }
 
     }
 }

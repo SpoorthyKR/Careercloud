@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+//import "google/protobuf/timestamp.proto";
+
+
+option csharp_namespace = "CareerCloud.gRPC.Protos";
+
+package CareerCloud.gRPC;
+
+service CompanyLocation {
+    rpc ReadCompanyLocation(CompanyLocationRequest) returns (CompanyLocationPayload);
+	rpc CreateCompanyLocation(CompanyLocationPayload) returns (google.protobuf.Empty);
+	rpc UpdateCompanyLocation(CompanyLocationPayload) returns (google.protobuf.Empty);
+	rpc DeleteCompanyLocation(CompanyLocationPayload) returns (google.protobuf.Empty);
+}
+
+message CompanyLocationRequest{
+		string Id=1;
+	}
+
+message CompanyLocationPayload {
+		 string Id = 1;
+         string Company = 2;
+         string CountryCode = 3;
+         string Province = 4; 
+         string Street = 5;
+         string City = 6;
+         string PostalCode = 7;
+
+	}
